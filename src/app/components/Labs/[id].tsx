@@ -4,22 +4,24 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Course({ title }) {
+interface IState {
+    id: number,
+    name: string,
+    course: string,
+    createdAt: any,
+    updatedAt: any
+};
+
+interface IProps {
+    [key: string]: IState
+}
+
+export default function Course({ labs, params }: IProps, string) {
     const [load, setLoad] = useState(false);
-    const [labs, setLabs] = useState([]);
+    const [lab, setLabs] = useState([]);
 
     useEffect(() => {
-        setLabs([
-            { id: "1", title: "Первый" },
-            { id: "2", title: "Второй" },
-            { id: "3", title: "Третий" },
-            { id: "4", title: "Четвертый" },
-            { id: "5", title: "Пятый" },
-            { id: "6", title: "Шестой" },
-            { id: "7", title: "Седьмой" },
-            { id: "8", title: "Восбмой" },
-            { id: "8", title: "Восбмой" },
-        ]);
+        setLabs(labs);
         setLoad(true);
     }, []);
 
@@ -31,13 +33,13 @@ export default function Course({ title }) {
                         <div className="p-2 flex-grow-1 bd-highlight">
                             <div className="flex justify-content flex-wrap">
                                 <h1 className="mb-4 text-3xl text-muted font-weight-bold">
-                                    BLock 1
+                                    Лабораторые работы
                                 </h1>
                                 <div>
-                                    {load && labs.map((p) => 
-                                    <Link key={p.id} href={`/labsPage/{${p.title}/{${p.id}`}>                                    
+                                    {load && lab.map((p: IState) => 
+                                    <Link key={p.id} href={`/labsPage/${params}/${p.name}`}>                                    
                                     <p className="text-base !leading-relaxed text-muted md:text-lg">
-                                        {p.title}
+                                        {p.name}
                                     </p>
                                     </Link>
                                     )   }
