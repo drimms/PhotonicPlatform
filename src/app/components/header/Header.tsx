@@ -14,7 +14,7 @@
     import "./../../globals.css";
     import "bootstrap/dist/css/bootstrap.min.css";
     import ThemeSwitch from "../ThemeSwitch";
-    import Login from "../LoginForm/Login";
+    import Login from "../ModalForm/Login";
     import { useStore } from "@/app/store/StoreProvider";
     const Header = () => {
         const [modalShow, setModalShow] = React.useState(false);
@@ -90,7 +90,7 @@
                                                         marginRight: "5px",
                                                     }}
                                                 />
-                                                Админ
+                                                Управление
                                             </Button>
                                         </Link>}
 
@@ -137,7 +137,7 @@
                         width={400}
                         height={400}
                         src="/3d.png"
-                        style={{ transform: `rotate(${30}deg)` }}
+                        style={{ transform: `rotate({30}deg)` }}
                     />
                 </div>
                 <div className="opacity-70 top-0 right-2 absolute z-n1 position-absolute p-4">
@@ -146,7 +146,7 @@
                         width={400}
                         height={400}
                         src="/3dd.png"
-                        style={{ transform: `rotate(${10}deg)` }}
+                        style={{ transform: `rotate({10}deg)` }}
                     />
                 </div>
                 </div>

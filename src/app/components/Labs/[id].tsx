@@ -44,6 +44,7 @@ export default function Course({ labs, params }: IProps, string) {
                                     </Link>
                                     )   }
                                     
+                                    
                                 </div>
                             </div>
                         </div>

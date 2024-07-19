@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 
 export default class AdminStore {
-    adminPage: boolean = false;
+    adminPage: boolean = true;
 
     constructor() {
         makeAutoObservable(this);

@@ -26,7 +26,7 @@ const TestForm = ({test}) => {
     const [correct, setCorrect] = useState(0);
     const [openQuest, setQuest] = useState();
     const question = quest[step];
-    console.log(question, '----')
+    
     let progress = Math.round(step / quest.length * 100);
     const handleClick = (index) => {
         setStep(step + 1)
